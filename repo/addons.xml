@@ -30,9 +30,9 @@
     <addon id="repository.kodi.navidrome" name="Navidrome Repository" version="1.0.0" provider-name="colinfredynand">
         <extension point="xbmc.addon.repository" name="Navidrome Repository">
             <dir>
-                <info compressed="false">https://colinfredynand.github.io/plugin.kodi.navidrome.releases/repo/addons.xml</info>
-                <checksum>https://colinfredynand.github.io/plugin.kodi.navidrome.releases/repo/addons.xml.md5</checksum>
-                <datadir zip="true">https://colinfredynand.github.io/plugin.kodi.navidrome.releases/repo/</datadir>
+                <info compressed="false">https://kodi.colinfredynand.com/repo/addons.xml</info>
+                <checksum>https://kodi.colinfredynand.com/repo/addons.xml.md5</checksum>
+                <datadir zip="true">https://kodi.colinfredynand.com/repo/</datadir>
             </dir>
         </extension>
         <extension point="xbmc.addon.metadata">
