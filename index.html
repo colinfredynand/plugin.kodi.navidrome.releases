@@ -1,2 +1,251 @@
-<h1>Colin's Kodi Repository</h1>
-<p>This site hosts the Navidrome Kodi add-on.</p>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navidrome for Kodi</title>
+<meta name="description" content="Kodi add-on repository for the Navidrome music plugin — stream your Navidrome library in Kodi.">
+<link rel="icon" href="repo/plugin.kodi.navidrome/icon.png">
+<style>
+  :root {
+    --bg: #fbfbfa;
+    --panel: #fff;
+    --text: #1b1b1a;
+    --muted: #63635e;
+    --line: #e3e2dd;
+    --accent: #2f6f4f;
+    --accent-soft: #eaf2ec;
+    --code-bg: #f2f1ed;
+    --note-bg: #fdf6e6;
+    --note-line: #e0c98a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #191918;
+      --panel: #212120;
+      --text: #eceae4;
+      --muted: #a3a19a;
+      --line: #34332f;
+      --accent: #7fbf9a;
+      --accent-soft: #1e2a23;
+      --code-bg: #2a2a27;
+      --note-bg: #2a2414;
+      --note-line: #6b5a2c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding-block: 3rem 4rem;
+    padding-inline: 1.25rem;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  body { overflow-x: hidden; }
+  header { display: flex; align-items: center; gap: 1rem; margin-bottom: .5rem; }
+  header img { width: 56px; height: 56px; border-radius: 12px; flex: none; }
+  h1 { font-size: 1.7rem; line-height: 1.2; margin: 0; letter-spacing: -.02em; }
+  .tagline { color: var(--muted); margin: .35rem 0 1.5rem; }
+  h2 {
+    font-size: 1.15rem; margin: 2.75rem 0 .85rem;
+    padding-bottom: .4rem; border-bottom: 1px solid var(--line);
+    letter-spacing: -.01em;
+  }
+  h3 { font-size: .95rem; margin: 1.75rem 0 .5rem; }
+  p, li { overflow-wrap: break-word; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.75rem; }
+  .badge {
+    font-size: .8rem; padding: .2rem .6rem; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    white-space: nowrap;
+  }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .875em; background: var(--code-bg);
+    padding: .12em .38em; border-radius: 4px;
+  }
+  .url {
+    display: block; background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 6px; padding: .6rem .75rem; margin: .6rem 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .85rem; overflow-x: auto; white-space: nowrap;
+    -webkit-user-select: all; user-select: all;
+  }
+  ol { padding-left: 1.4rem; }
+  ol li { margin-bottom: .55rem; }
+  ol li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .path { font-weight: 600; }
+  .note {
+    background: var(--note-bg); border: 1px solid var(--note-line);
+    border-radius: 8px; padding: .9rem 1.1rem; margin: 1.5rem 0;
+  }
+  .note p:first-child { margin-top: 0; }
+  .note p:last-child { margin-bottom: 0; }
+  .note p:first-child strong { display: block; margin-bottom: .3rem; }
+  dl { margin: 0; }
+  dt { font-weight: 600; margin-top: .9rem; }
+  dd { margin: .15rem 0 0; color: var(--muted); }
+  .card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 10px; padding: 1.1rem 1.35rem; margin: 1rem 0;
+  }
+  .card h3 { margin-top: 0; }
+  .sub { color: var(--muted); font-size: .9rem; }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: .875rem;
+  }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <img src="repo/plugin.kodi.navidrome/icon.png" alt="">
+    <div>
+      <h1>Navidrome for Kodi</h1>
+    </div>
+  </header>
+
+  <p class="tagline">
+    Stream your <a href="https://www.navidrome.org/">Navidrome</a> music library in Kodi —
+    browsing, search, playlists, offline downloads, ratings and scrobbling.
+    This page is the add-on repository; add it once and Kodi handles updates from then on.
+  </p>
+
+  <div class="badges">
+    <span class="badge">Plugin 0.6.0</span>
+    <span class="badge">Repository 1.0.1</span>
+    <span class="badge">Kodi 19 Matrix or newer</span>
+  </div>
+
+  <h2>Before you start</h2>
+  <p>
+    You need a reachable Navidrome server (its URL, plus a username and password),
+    and Kodi 19 “Matrix” or newer — the add-on targets Python 3, so Kodi 18 and
+    earlier cannot run it.
+  </p>
+
+  <h2>Install</h2>
+  <p>
+    You add the repository once. After that Kodi checks it for new versions on its
+    own and offers the update — there is nothing to repeat per release.
+  </p>
+
+  <ol>
+    <li>
+      Allow add-ons from outside the official repository:
+      <span class="path">Settings → System → Add-ons</span>, turn on
+      <strong>Unknown sources</strong>, and accept the warning.
+    </li>
+    <li>
+      Go to <span class="path">Settings → File manager → Add source</span>,
+      choose <code>&lt;None&gt;</code>, and enter this address exactly, with the
+      trailing slash:
+      <span class="url">https://kodi.kellerwahnsinn.com/repo/</span>
+      Name it <code>navidrome</code> and select <strong>OK</strong>.
+    </li>
+    <li>
+      Go to <span class="path">Settings → Add-ons → Install from zip file</span>,
+      pick <code>navidrome</code> → <code>repository.kodi.navidrome</code> →
+      <code>repository.kodi.navidrome-1.0.1.zip</code>. This installs the
+      repository, not the plugin.
+    </li>
+    <li>
+      Now go to <span class="path">Settings → Add-ons → Install from repository</span>,
+      choose <strong>Navidrome Kodi Repository → Music add-ons → Navidrome</strong>,
+      and select <strong>Install</strong>.
+    </li>
+  </ol>
+
+  <p class="sub">
+    Step 4 always installs the current release, which is 0.6.0. Future updates arrive
+    through the same repository automatically.
+  </p>
+
+  <div class="card">
+    <h3>Installing a specific version by hand</h3>
+    <p class="sub">
+      For rolling back, or for a one-off install without adding the repository.
+    </p>
+    <p>
+      Every published zip stays available at
+      <a href="repo/plugin.kodi.navidrome/">repo/plugin.kodi.navidrome/</a>. Using the
+      same <code>navidrome</code> file source from step 2, go to
+      <span class="path">Install from zip file</span> and browse into
+      <code>plugin.kodi.navidrome</code> instead, then pick the version you want.
+    </p>
+    <p>
+      Kodi will not auto-update a plugin installed this way while the repository is
+      absent, and it will not downgrade one either — to go back up, install the newer
+      zip the same way.
+    </p>
+  </div>
+
+  <h2>Connect it to your server</h2>
+  <p>
+    Nothing works until you enter your server details. Open
+    <span class="path">Add-ons → Music add-ons</span>, then right-click (or
+    long-press) <strong>Navidrome</strong> and choose <strong>Settings</strong>.
+  </p>
+  <p>On the <strong>Server</strong> tab:</p>
+  <dl>
+    <dt>Server URL</dt>
+    <dd>Your Navidrome address, including the scheme and port if it is not standard — for example <code>https://music.example.com</code> or <code>http://192.168.1.10:4533</code>.</dd>
+    <dt>Username / Password</dt>
+    <dd>Your normal Navidrome login.</dd>
+    <dt>Verify TLS certificate</dt>
+    <dd>Leave this on. If your server uses a private or self-signed certificate, keep verification on and point <strong>CA certificate</strong> at the certificate that signed it. Turning verification off is the last resort — it removes any protection against an intercepted connection.</dd>
+  </dl>
+  <p class="sub" style="margin-top:1.25rem">
+    The remaining tabs are optional and have working defaults: <strong>Playback</strong>
+    (server-side transcoding and bitrate), <strong>Offline</strong> (download tracks,
+    albums or playlists for listening without the server, and the cache size limit),
+    <strong>Scrobbling</strong> (on by default, with a configurable threshold),
+    <strong>Display</strong> and <strong>Advanced</strong> (API timeout, debug logging).
+  </p>
+
+  <div class="note">
+    <p><strong>Already added this repository before September 2026?</strong></p>
+    <p>
+      Earlier releases of the repository add-on pointed at a hostname that was never
+      published, so Kodi silently found no updates. Kodi cannot repair this on its own —
+      it cannot download a fix from an address it fails to resolve.
+    </p>
+    <p>
+      To fix it: uninstall <strong>Navidrome Kodi Repository</strong> under
+      <span class="path">Settings → Add-ons → My add-ons → Add-on repository</span>,
+      then follow <strong>Install</strong> above again. Version 1.0.1 or newer has
+      the correct address. Your plugin settings and offline downloads are untouched.
+    </p>
+  </div>
+
+  <h2>If something goes wrong</h2>
+  <dl>
+    <dt>“Could not connect to repository” or no updates appear</dt>
+    <dd>Check that the device can reach <code>kodi.kellerwahnsinn.com</code> at all, then confirm the repository add-on is version 1.0.1 or newer — see the note above.</dd>
+    <dt>“Failed to install a dependency” or the add-on will not enable</dt>
+    <dd>Almost always Kodi 18 or older. Check <span class="path">Settings → System information</span>.</dd>
+    <dt>Empty library, or a connection error inside the add-on</dt>
+    <dd>Re-check the Server URL, including scheme and port. If you are on HTTPS with a private CA, see <strong>Verify TLS certificate</strong> above. Turning on <strong>Enable Debug Logging</strong> under <strong>Advanced</strong> puts detail into the Kodi log.</dd>
+  </dl>
+
+  <footer>
+    <p>
+      Source and issue tracker:
+      <a href="https://github.com/colinfredynand/plugin.kodi.navidrome">colinfredynand/plugin.kodi.navidrome</a>
+      · <a href="https://github.com/colinfredynand/plugin.kodi.navidrome/releases">release notes</a>
+      · <a href="repo/addons.xml">addons.xml</a>
+    </p>
+    <p>Plugin by colinfredynand, licensed under GPL-3.0. Not affiliated with the Navidrome or Kodi projects.</p>
+  </footer>
+
+</main>
+</body>
+</html>
