@@ -2,7 +2,7 @@
 <addons>
     <addon id="plugin.kodi.navidrome"
         name="Navidrome"
-        version="0.5.5"
+        version="0.6.0"
         provider-name="colinfredynand">
 
         <requires>
@@ -27,18 +27,21 @@
         </extension>
     </addon>
 
-    <addon id="repository.kodi.navidrome" name="Navidrome Repository" version="1.0.0" provider-name="colinfredynand">
-        <extension point="xbmc.addon.repository" name="Navidrome Repository">
+    <addon id="repository.kodi.navidrome" name="Navidrome Kodi Repository" version="1.0.1" provider-name="colinfredynand">
+        <extension point="xbmc.addon.repository" name="Navidrome Kodi Repository">
             <dir>
-                <info compressed="false">https://kodi.colinfredynand.com/repo/addons.xml</info>
-                <checksum>https://kodi.colinfredynand.com/repo/addons.xml.md5</checksum>
-                <datadir zip="true">https://kodi.colinfredynand.com/repo/</datadir>
+                <info compressed="false">https://kodi.kellerwahnsinn.com/repo/addons.xml</info>
+                <checksum>https://kodi.kellerwahnsinn.com/repo/addons.xml.md5</checksum>
+                <datadir zip="true">https://kodi.kellerwahnsinn.com/repo/</datadir>
             </dir>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Navidrome Plugin Repository</summary>
-            <description>Repository for Navidrome Kodi plugin</description>
+            <summary lang="en">Navidrome music server integration for Kodi</summary>
+            <description lang="en">Repository for Navidrome Kodi addon with automatic updates</description>
             <platform>all</platform>
+            <assets>
+                <icon>icon.png</icon>
+            </assets>
         </extension>
     </addon>
 </addons>
